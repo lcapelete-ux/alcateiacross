@@ -1,4 +1,5 @@
 import React from 'react';
+import wolfMark from '../assets/images/alcateia-wolf-mark.png';
 
 interface WolfLogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -12,10 +13,10 @@ export const WolfLogo: React.FC<WolfLogoProps> = ({
   className = '',
 }) => {
   const sizeMap = {
-    sm: 'w-8 h-8',
-    md: 'w-10 h-10',
-    lg: 'w-14 h-14',
-    xl: 'w-24 h-24',
+    sm: 'w-9 h-9',
+    md: 'w-11 h-11',
+    lg: 'w-16 h-16',
+    xl: 'w-28 h-28',
   };
 
   const textMap = {
@@ -26,37 +27,27 @@ export const WolfLogo: React.FC<WolfLogoProps> = ({
   };
 
   return (
-    <div className={`flex items-center gap-3 select-none ${className}`}>
-      {/* Wolf Crest Emblem Container */}
-      <div className={`relative ${sizeMap[size]} shrink-0 rounded-lg overflow-hidden border border-amber-500/30 shadow-lg shadow-amber-500/10 bg-slate-900 group`}>
+    <div className={'flex items-center gap-3 select-none ' + className}>
+      <div className={'relative shrink-0 overflow-hidden rounded-full bg-[#080d11] ring-2 ring-slate-600 shadow-[0_0_22px_rgba(239,43,45,0.18)] ' + sizeMap[size]}>
         <img
-          src="/src/assets/images/wolf_crest_emblem_1794091516936.jpg"
-          alt="Alcatéia CrossFit Crest"
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          referrerPolicy="no-referrer"
-          onError={(e) => {
-            // Elegant SVG fallback if asset fails
-            (e.target as HTMLElement).style.display = 'none';
-          }}
+          src={wolfMark}
+          alt="Símbolo do lobo da Alcateia Fitness"
+          className="h-full w-full object-cover"
         />
-        {/* Subtle inner gold rim */}
-        <div className="absolute inset-0 ring-1 ring-inset ring-amber-400/20 pointer-events-none rounded-lg" />
       </div>
 
       {showText && (
-        <div className="flex flex-col">
-          <div className="flex items-center gap-1.5">
-            <span
-              className={`font-heading font-bold tracking-wider text-white uppercase ${textMap[size]} leading-none`}
-            >
-              ALCATÉIA
+        <div className="flex min-w-0 flex-col border-l-2 border-red-600 pl-3">
+          <div className="flex items-baseline gap-2">
+            <span className={'font-heading font-bold tracking-[0.08em] text-white uppercase leading-none ' + textMap[size]}>
+              Alcateia
             </span>
-            <span className="text-[10px] font-mono tracking-widest text-amber-400 font-semibold uppercase px-1 py-0.5 bg-amber-400/10 border border-amber-400/30 rounded">
-              CHAMP
+            <span className="font-heading text-[10px] font-bold tracking-[0.22em] text-red-500 uppercase">
+              Fitness
             </span>
           </div>
-          <span className="text-[10px] tracking-widest text-slate-400 uppercase font-medium mt-0.5">
-            1º Campeonato Oficial
+          <span className="mt-1 text-[9px] font-semibold tracking-[0.2em] text-slate-400 uppercase">
+            Campeonato da Matilha
           </span>
         </div>
       )}

@@ -1,5 +1,7 @@
 import React from 'react';
-import { Calendar, MapPin, Trophy, Users, ArrowRight, Flame } from 'lucide-react';
+import { Calendar, MapPin, Trophy, ArrowRight, Flame, Swords } from 'lucide-react';
+import wolfMark from '../assets/images/alcateia-wolf-mark.png';
+import heroPhoto from '../assets/images/hero_crossfit_alcateia_1794091516280.jpg';
 
 interface HeroSectionProps {
   onRegisterClick: () => void;
@@ -11,116 +13,117 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onLeaderboardClick,
 }) => {
   return (
-    <section className="relative w-full overflow-hidden border-b border-slate-800 bg-[#0B0F15]">
-      {/* Background Image with Cinematic Measured Scrim */}
-      <div className="absolute inset-0 z-0">
+    <section className="alcateia-grid alcateia-grain relative overflow-hidden border-b border-white/10 bg-[#080808]">
+      <div className="absolute inset-0">
         <img
-          src="/src/assets/images/hero_crossfit_alcateia_1794091516280.jpg"
-          alt="Arena do 1º Campeonato CrossFit Alcatéia"
-          className="w-full h-full object-cover object-center opacity-35 scale-105"
-          referrerPolicy="no-referrer"
+          src={heroPhoto}
+          alt=""
+          className="h-full w-full object-cover object-center opacity-25 grayscale"
         />
-        {/* Scrim gradient ensuring 4.5:1+ contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F15] via-[#0B0F15]/80 to-[#0B0F15]/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F15] via-[#0B0F15]/70 to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,#080808_0%,rgba(8,8,8,.94)_48%,rgba(8,8,8,.56)_100%)]" />
+        <div className="absolute -right-20 top-0 h-full w-[46%] skew-x-[-12deg] bg-red-600/10" />
+        <div className="absolute right-[20%] top-0 h-full w-1 skew-x-[-12deg] bg-red-600/70" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-24">
-        {/* Quiet Kicker */}
-        <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider text-amber-400 uppercase mb-4">
-          <Flame className="w-4 h-4 text-amber-400" />
-          <span>Inscrições Oficiais Abertas</span>
-          <span aria-hidden="true" className="text-slate-600">·</span>
-          <span>Box Alcatéia</span>
-        </div>
-
-        {/* Display Headline */}
-        <div className="max-w-4xl">
-          <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white uppercase leading-[0.95]">
-            O Uivo da Matilha. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500">
-              A Força da Comunidade.
-            </span>
-          </h1>
-
-          <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed font-normal">
-            Participe do Primeiro Campeonato Individual de CrossFit da Alcatéia. Dois dias intensos de superação, barras pesadas, torcida vibrante e confraternização entre boxes.
-          </p>
-
-          {/* Event Quick Specs */}
-          <div className="mt-8 flex flex-wrap items-center gap-y-3 gap-x-6 text-xs sm:text-sm text-slate-300 font-medium">
-            <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-amber-400" />
-              <span>28 e 29 de Novembro de 2026</span>
-            </div>
-            <span aria-hidden="true" className="hidden sm:inline text-slate-600">·</span>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-amber-400" />
-              <span>Arena Alcatéia CrossFit</span>
-            </div>
-            <span aria-hidden="true" className="hidden sm:inline text-slate-600">·</span>
-            <div className="flex items-center gap-2">
-              <Trophy className="w-4 h-4 text-amber-400" />
-              <span>Troféus, Medalhas & Premiação</span>
-            </div>
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[1.18fr_.82fr] lg:px-8 lg:py-20">
+        <div>
+          <div className="mb-5 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-red-500">
+            <Flame className="h-4 w-4" />
+            <span>Inscrições oficiais abertas</span>
+            <span className="text-white/30">/</span>
+            <span className="text-white/65">Arena Alcateia</span>
           </div>
 
-          {/* Action CTAs */}
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <button
-              onClick={onRegisterClick}
-              className="px-7 py-3.5 text-sm sm:text-base font-bold uppercase tracking-wider text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 hover:from-amber-300 hover:to-amber-400 rounded-lg shadow-lg shadow-amber-500/25 transition-all transform hover:scale-[1.02] active:scale-[0.98] flex items-center gap-3 cursor-pointer"
-            >
-              <span>Inscrever-se no Torneio</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+          <div className="max-w-4xl">
+            <div className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.4em] text-white/55">
+              1º campeonato individual
+            </div>
+            <h1 className="font-heading text-5xl font-bold uppercase leading-[0.88] tracking-[-0.025em] text-white sm:text-7xl lg:text-[5.8rem]">
+              Entre na
+              <span className="relative mt-1 block w-fit pr-5 text-red-500">
+                Alcateia
+                <span className="absolute -bottom-2 left-0 h-1 w-full bg-red-600" />
+              </span>
+            </h1>
 
-            <button
-              onClick={onLeaderboardClick}
-              className="px-6 py-3.5 text-sm sm:text-base font-semibold text-slate-200 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 rounded-lg transition-all flex items-center gap-2.5 cursor-pointer"
-            >
-              <Trophy className="w-4 h-4 text-amber-400" />
-              <span>Ver Leaderboard / Ranking</span>
-            </button>
+            <p className="mt-8 max-w-2xl border-l-2 border-red-600 pl-5 text-base leading-relaxed text-slate-300 sm:text-lg">
+              Dois dias de força, estratégia e união. Cada atleta entra sozinho na arena,
+              mas ninguém compete sem a energia da matilha.
+            </p>
+
+            <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-wide text-slate-300 sm:text-sm">
+              <span className="flex items-center gap-2">
+                <Calendar className="h-4 w-4 text-red-500" />
+                28 e 29 de novembro de 2026
+              </span>
+              <span className="flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-red-500" />
+                Arena Alcateia Fitness
+              </span>
+            </div>
+
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <button
+                onClick={onRegisterClick}
+                className="alcateia-button flex items-center gap-3 bg-red-600 px-7 py-4 text-sm font-extrabold uppercase tracking-[0.12em] text-white shadow-[0_12px_40px_rgba(239,43,45,.28)] transition hover:bg-red-500"
+              >
+                Garantir minha vaga
+                <ArrowRight className="h-4 w-4" />
+              </button>
+
+              <button
+                onClick={onLeaderboardClick}
+                className="alcateia-button flex items-center gap-2 border border-white/25 bg-black/55 px-6 py-4 text-sm font-bold uppercase tracking-[0.1em] text-white transition hover:border-red-500 hover:text-red-400"
+              >
+                <Trophy className="h-4 w-4 text-red-500" />
+                Ver ranking
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* 4-Stat Strip Row */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-slate-800/80">
-          <div className="p-4 rounded-lg bg-slate-900/50 border border-slate-800/80">
-            <div className="text-2xl sm:text-3xl font-heading font-bold text-amber-400 tabular-nums">
-              140+
-            </div>
-            <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">
-              Vagas de Atletas
+        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+          <div className="alcateia-cut relative aspect-[4/5] overflow-hidden border border-white/15 bg-[#101010] shadow-2xl">
+            <div className="absolute inset-x-0 top-0 h-2 bg-red-600" />
+            <div className="absolute -right-16 -top-16 h-48 w-48 rotate-45 border-[30px] border-red-600/20" />
+
+            <div className="relative flex h-full flex-col items-center justify-center p-8 text-center">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-red-600/20 blur-3xl" />
+                <img
+                  src={wolfMark}
+                  alt="Lobo da Alcateia Fitness"
+                  className="relative mx-auto w-48 rounded-full ring-4 ring-white/10 sm:w-56"
+                />
+              </div>
+
+              <div className="mt-7 font-heading text-3xl font-bold uppercase tracking-[0.16em] text-white">
+                Força de matilha
+              </div>
+              <div className="mt-2 text-xs font-bold uppercase tracking-[0.35em] text-red-500">
+                Alcateia Fitness
+              </div>
+
+              <div className="mt-8 grid w-full grid-cols-3 border-y border-white/10 py-4">
+                <div>
+                  <div className="font-heading text-2xl font-bold text-white">140+</div>
+                  <div className="text-[9px] uppercase tracking-widest text-white/45">atletas</div>
+                </div>
+                <div className="border-x border-white/10">
+                  <div className="font-heading text-2xl font-bold text-red-500">4</div>
+                  <div className="text-[9px] uppercase tracking-widest text-white/45">categorias</div>
+                </div>
+                <div>
+                  <div className="font-heading text-2xl font-bold text-white">3+1</div>
+                  <div className="text-[9px] uppercase tracking-widest text-white/45">WODs</div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="p-4 rounded-lg bg-slate-900/50 border border-slate-800/80">
-            <div className="text-2xl sm:text-3xl font-heading font-bold text-white tabular-nums">
-              Individual
-            </div>
-            <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">
-              Masc & Feminino
-            </div>
-          </div>
-
-          <div className="p-4 rounded-lg bg-slate-900/50 border border-slate-800/80">
-            <div className="text-2xl sm:text-3xl font-heading font-bold text-amber-400 tabular-nums">
-              3 WODs + Final
-            </div>
-            <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">
-              Provas Esmagadoras
-            </div>
-          </div>
-
-          <div className="p-4 rounded-lg bg-slate-900/50 border border-slate-800/80">
-            <div className="text-2xl sm:text-3xl font-heading font-bold text-white tabular-nums">
-              R$ 8.000+
-            </div>
-            <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">
-              Em Premiações & Brindes
-            </div>
+          <div className="absolute -right-3 top-8 flex items-center gap-2 bg-red-600 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.22em] text-white shadow-xl">
+            <Swords className="h-4 w-4" />
+            Arena 2026
           </div>
         </div>
       </div>

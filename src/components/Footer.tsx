@@ -9,7 +9,8 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onNavClick, onAdminClick }) => {
   return (
-    <footer className="w-full bg-[#080B10] border-t border-slate-800/80 text-slate-400 text-xs py-12">
+    <footer className="relative w-full bg-[#050505] border-t border-white/10 text-slate-400 text-xs py-12">
+      <div className="absolute left-0 top-0 h-1 w-1/3 bg-red-600" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
           {/* Col 1: Brand & Logo */}
@@ -35,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, onAdminClick }) => {
               <li>
                 <button
                   onClick={() => onNavClick('home')}
-                  className="hover:text-amber-400 transition"
+                className="hover:text-red-400 transition"
                 >
                   Página Inicial
                 </button>
@@ -43,7 +44,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, onAdminClick }) => {
               <li>
                 <button
                   onClick={() => onNavClick('register')}
-                  className="hover:text-amber-400 transition"
+                  className="hover:text-red-400 transition"
                 >
                   Inscrições de Atletas
                 </button>
@@ -51,7 +52,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, onAdminClick }) => {
               <li>
                 <button
                   onClick={() => onNavClick('leaderboard')}
-                  className="hover:text-amber-400 transition"
+                  className="hover:text-red-400 transition"
                 >
                   Leaderboard & Ranking
                 </button>
@@ -59,7 +60,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, onAdminClick }) => {
               <li>
                 <button
                   onClick={() => onNavClick('news')}
-                  className="hover:text-amber-400 transition"
+                  className="hover:text-red-400 transition"
                 >
                   Feed de Notícias & Briefings
                 </button>
@@ -67,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, onAdminClick }) => {
               <li>
                 <button
                   onClick={() => onNavClick('about')}
-                  className="hover:text-amber-400 transition"
+                  className="hover:text-red-400 transition"
                 >
                   Sobre a Matilha
                 </button>

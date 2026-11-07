@@ -31,7 +31,7 @@ function ChampionshipApp() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0F15] text-slate-100 flex flex-col selection:bg-amber-500 selection:text-black">
+    <div className="min-h-screen bg-[#080808] text-slate-100 flex flex-col selection:bg-red-600 selection:text-white">
       {/* Navbar with 3-Zone Contract */}
       <Navbar
         activeTab={activeTab}
@@ -51,7 +51,7 @@ function ChampionshipApp() {
             />
 
             {/* Section: Official Categories */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-slate-800/80">
+            <section className="alcateia-grid max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-white/10">
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
                 <div>
                   <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-amber-400 uppercase">
@@ -68,7 +68,7 @@ function ChampionshipApp() {
 
                 <button
                   onClick={() => handleTabChange('register')}
-                  className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold uppercase tracking-wider text-xs rounded-lg shadow-sm transition flex items-center gap-2 self-start md:self-auto cursor-pointer"
+                  className="alcateia-button px-6 py-3 bg-red-600 hover:bg-red-500 text-white font-bold uppercase tracking-wider text-xs shadow-sm transition flex items-center gap-2 self-start md:self-auto cursor-pointer"
                 >
                   <span>Garantir Minha Vaga</span>
                   <ArrowRight className="w-4 h-4" />
@@ -83,7 +83,7 @@ function ChampionshipApp() {
                   return (
                     <div
                       key={cat.id}
-                      className="p-5 rounded-xl bg-[#101620] border border-slate-800 hover:border-amber-400/40 transition-all flex flex-col justify-between shadow-lg group"
+                      className="alcateia-cut p-5 bg-[#121212] border border-white/10 hover:border-red-500/60 transition-all flex flex-col justify-between shadow-lg group"
                     >
                       <div>
                         <div className="flex items-center justify-between text-xs mb-3">
@@ -132,7 +132,8 @@ function ChampionshipApp() {
             </section>
 
             {/* Section: WODs Announcement */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-slate-800/80">
+            <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-white/10">
+              <div className="absolute left-4 top-0 h-1 w-24 bg-red-600 sm:left-6 lg:left-8" />
               <div className="text-center max-w-2xl mx-auto mb-12">
                 <div className="flex items-center justify-center gap-2 text-xs font-semibold tracking-wider text-amber-400 uppercase">
                   <Trophy className="w-4 h-4 text-amber-400" />
@@ -150,7 +151,7 @@ function ChampionshipApp() {
                 {workouts.map((wod) => (
                   <div
                     key={wod.id}
-                    className="p-6 rounded-xl bg-[#101620] border border-slate-800 hover:border-slate-700 transition shadow-lg flex flex-col justify-between"
+                    className="alcateia-cut p-6 bg-[#121212] border border-white/10 hover:border-red-500/50 transition shadow-lg flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-center justify-between text-xs text-slate-400 mb-2">
@@ -179,7 +180,7 @@ function ChampionshipApp() {
             </section>
 
             {/* Section: Latest News Highlights */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
               <div className="flex items-center justify-between mb-8">
                 <div>
                   <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-amber-400 uppercase">
@@ -205,7 +206,7 @@ function ChampionshipApp() {
                   <div
                     key={item.id}
                     onClick={() => handleTabChange('news')}
-                    className="p-6 rounded-xl bg-[#101620] border border-slate-800 hover:border-amber-400/50 transition cursor-pointer shadow-lg group"
+                    className="alcateia-cut p-6 bg-[#121212] border border-white/10 hover:border-red-500/60 transition cursor-pointer shadow-lg group"
                   >
                     <div className="flex items-center gap-2 text-xs text-amber-400 font-semibold mb-2">
                       <span className="uppercase">{item.tag}</span>

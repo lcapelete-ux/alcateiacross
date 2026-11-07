@@ -33,8 +33,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#0B0F15]/90 backdrop-blur-md border-b border-slate-800/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-8">
+    <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-[#080808]/95 backdrop-blur-xl">
+      <div className="absolute bottom-0 left-0 h-px w-1/4 bg-red-600" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[4.75rem] flex items-center justify-between gap-8">
         {/* Zone 1: Brand Wordmark / Emblem */}
         <button
           onClick={() => handleNavClick('home')}
@@ -44,7 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </button>
 
         {/* Zone 2: 4-5 single-line text links */}
-        <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <nav className="hidden md:flex items-center gap-7 text-xs font-bold uppercase tracking-[0.09em] text-slate-300">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
             return (
@@ -52,12 +53,12 @@ export const Navbar: React.FC<NavbarProps> = ({
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
                 className={`transition-colors whitespace-nowrap shrink-0 hover:text-white py-1 relative ${
-                  isActive ? 'text-amber-400 font-semibold' : ''
+                  isActive ? 'text-red-500' : ''
                 }`}
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-400 rounded-full" />
+                  <span className="absolute -bottom-[1.8rem] left-0 right-0 h-1 bg-red-600" />
                 )}
               </button>
             );
@@ -71,11 +72,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => handleNavClick('admin')}
               className={`flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all whitespace-nowrap shrink-0 border ${
                 activeTab === 'admin'
-                  ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-md shadow-amber-500/20'
-                  : 'bg-amber-500/10 text-amber-300 border-amber-500/30 hover:bg-amber-500/20'
+                  ? 'bg-red-600 text-white border-red-500 shadow-md shadow-red-950/40'
+                  : 'bg-red-600/10 text-red-300 border-red-500/30 hover:bg-red-500/20'
               }`}
             >
-              <ShieldCheck className="w-4 h-4 text-amber-400" />
+              <ShieldCheck className="w-4 h-4 text-red-400" />
               <span>Painel Admin</span>
               {pendingPaymentsCount > 0 && (
                 <span className="bg-red-500 text-white text-[10px] font-mono font-bold px-1.5 py-0.2 rounded-full">
@@ -86,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           ) : (
             <button
               onClick={onOpenAdminModal}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/60 rounded-lg transition-colors whitespace-nowrap shrink-0"
+              className="flex items-center gap-1.5 border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-300 transition-colors hover:border-red-500/50 hover:text-white whitespace-nowrap shrink-0"
               title="Acesso de Administrador da Alcatéia"
             >
               <LogIn className="w-3.5 h-3.5 text-slate-400" />
@@ -96,9 +97,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <button
             onClick={() => handleNavClick('register')}
-            className="hidden sm:flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 rounded-lg transition-all shadow-md shadow-amber-500/15 whitespace-nowrap shrink-0 hover:scale-[1.02] active:scale-[0.98]"
+            className="alcateia-button hidden sm:flex items-center gap-2 bg-red-600 px-5 py-2.5 text-xs font-extrabold uppercase tracking-[0.11em] text-white transition-all shadow-md shadow-red-950/40 whitespace-nowrap shrink-0 hover:bg-red-500 active:scale-[0.98]"
           >
-            <UserCheck className="w-3.5 h-3.5 text-slate-950" />
+            <UserCheck className="w-3.5 h-3.5 text-white" />
             <span>Inscrever Atleta</span>
           </button>
 
@@ -115,14 +116,14 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0F141C] border-b border-slate-800 px-4 pt-2 pb-6 space-y-2 animate-fadeIn">
+        <div className="md:hidden bg-[#0d0d0d] border-b border-white/10 px-4 pt-2 pb-6 space-y-2 animate-fadeIn">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
               className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                 activeTab === item.id
-                  ? 'bg-amber-400/10 text-amber-400 border border-amber-400/30'
+                  ? 'bg-red-500/10 text-red-400 border border-red-500/30'
                   : 'text-slate-300 hover:bg-slate-800/50 hover:text-white'
               }`}
             >
@@ -132,7 +133,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="pt-3 border-t border-slate-800 flex flex-col gap-2">
             <button
               onClick={() => handleNavClick('register')}
-              className="w-full py-2.5 px-4 text-center text-xs font-bold uppercase tracking-wider text-slate-950 bg-amber-400 hover:bg-amber-300 rounded-lg shadow"
+              className="alcateia-button w-full bg-red-600 py-3 px-4 text-center text-xs font-bold uppercase tracking-wider text-white hover:bg-red-500 shadow"
             >
               Inscrever Atleta Agora
             </button>

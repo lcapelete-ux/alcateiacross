@@ -8,7 +8,7 @@ interface AboutSectionProps {
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ onRegisterClick }) => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="alcateia-grid max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       {/* 2-Column Split: Story + Real Community Photography */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
@@ -32,7 +32,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onRegisterClick }) =
 
           {/* Core Values */}
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-4 rounded-lg bg-[#101620] border border-slate-800">
+            <div className="alcateia-cut p-4 bg-[#121212] border border-white/10">
               <div className="flex items-center gap-2 text-white font-heading text-base font-bold uppercase">
                 <Users className="w-4 h-4 text-amber-400" />
                 <span>União & Matilha</span>
@@ -42,7 +42,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onRegisterClick }) =
               </p>
             </div>
 
-            <div className="p-4 rounded-lg bg-[#101620] border border-slate-800">
+            <div className="alcateia-cut p-4 bg-[#121212] border border-white/10">
               <div className="flex items-center gap-2 text-white font-heading text-base font-bold uppercase">
                 <Flame className="w-4 h-4 text-amber-400" />
                 <span>Superação Real</span>
@@ -52,7 +52,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onRegisterClick }) =
               </p>
             </div>
 
-            <div className="p-4 rounded-lg bg-[#101620] border border-slate-800">
+            <div className="alcateia-cut p-4 bg-[#121212] border border-white/10">
               <div className="flex items-center gap-2 text-white font-heading text-base font-bold uppercase">
                 <Award className="w-4 h-4 text-amber-400" />
                 <span>Arbitragem Justa</span>
@@ -62,7 +62,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onRegisterClick }) =
               </p>
             </div>
 
-            <div className="p-4 rounded-lg bg-[#101620] border border-slate-800">
+            <div className="alcateia-cut p-4 bg-[#121212] border border-white/10">
               <div className="flex items-center gap-2 text-white font-heading text-base font-bold uppercase">
                 <MapPin className="w-4 h-4 text-amber-400" />
                 <span>Estrutura Completa</span>
@@ -76,7 +76,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onRegisterClick }) =
           <div className="mt-8">
             <button
               onClick={onRegisterClick}
-              className="px-6 py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold uppercase tracking-wider text-xs rounded-lg shadow-md transition"
+              className="alcateia-button px-7 py-3.5 bg-red-600 hover:bg-red-500 text-white font-bold uppercase tracking-wider text-xs shadow-md transition"
             >
               Fazer Parte da Disputa
             </button>
@@ -84,7 +84,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onRegisterClick }) =
         </div>
 
         {/* Community Photographic Showcase */}
-        <div className="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl group">
+        <div className="alcateia-cut relative overflow-hidden border border-white/15 shadow-2xl group">
           <img
             src="/src/assets/images/community_athletes_wod_1794091516520.jpg"
             alt="Atletas da Alcatéia comemorando após treino pesado de CrossFit"
