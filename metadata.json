@@ -1,0 +1,6 @@
+{
+  "name": "1º Campeonato CrossFit Alcatéia",
+  "description": "Plataforma oficial de inscrições, ranking e divulgação do Primeiro Campeonato de CrossFit da Alcatéia. Painel admin para baixa de pagamentos PIX, lançamento de pontos e gestão de categorias.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
