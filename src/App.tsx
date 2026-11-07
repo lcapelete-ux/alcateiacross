@@ -14,11 +14,16 @@ import { AboutSection } from './components/AboutSection';
 import { AdminPanel } from './components/AdminPanel';
 import { AdminLoginModal } from './components/AdminLoginModal';
 import { Footer } from './components/Footer';
+import { IntroSplash } from './components/IntroSplash';
 import { Flame, Trophy, Newspaper, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 function ChampionshipApp() {
   const [activeTab, setActiveTab] = useState<string>('home');
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
+  const [showIntro, setShowIntro] = useState(() => {
+    if (typeof window === 'undefined') return true;
+    return sessionStorage.getItem('alcateia-intro-seen') !== 'true';
+  });
   const { categories, workouts, news, athletes, isAdmin } = useChampionship();
 
   const handleTabChange = (tab: string) => {
@@ -30,8 +35,14 @@ function ChampionshipApp() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleIntroFinish = () => {
+    sessionStorage.setItem('alcateia-intro-seen', 'true');
+    setShowIntro(false);
+  };
+
   return (
     <div className="min-h-screen bg-[#080808] text-slate-100 flex flex-col selection:bg-red-600 selection:text-white">
+      {showIntro && <IntroSplash onFinish={handleIntroFinish} />}
       {/* Navbar with 3-Zone Contract */}
       <Navbar
         activeTab={activeTab}
